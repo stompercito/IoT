@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('prueba/{name}', 'PruebaController@prueba');
+
+Route::resource('sensors', 'SensorsController');
