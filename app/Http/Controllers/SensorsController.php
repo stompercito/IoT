@@ -14,7 +14,8 @@ class SensorsController extends Controller
      */
     public function index()
     {
-        return 'Hola desde el controllador de sensores';
+        $data = Info::all();
+	        return $data;
     }
 
     /**
@@ -24,7 +25,7 @@ class SensorsController extends Controller
      */
     public function create()
     {
-        return view('sensors.create');
+        //return view('sensors.create');
     }
 
     /**
@@ -35,10 +36,13 @@ class SensorsController extends Controller
      */
     public function store(Request $request)
     {
-        //$sensors = new Sensor();
+        $sensors = new Sensor();
         //$sensors->temperatura = $request->input('temperatura');
         //$sensors->save();
-        return $request->all();
+        ////return $request->all();
+        $sensors->data = $request->getContent();
+                $sensors->save();
+                return response()->json($sensors);
     }
 
     /**
