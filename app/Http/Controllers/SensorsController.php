@@ -14,7 +14,7 @@ class SensorsController extends Controller
      */
     public function index()
     {
-        $data = Info::all();
+        $data = Sensor::all();
 	        return $data;
     }
 
