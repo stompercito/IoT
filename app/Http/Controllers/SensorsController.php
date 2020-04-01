@@ -36,13 +36,12 @@ class SensorsController extends Controller
      */
     public function store(Request $request)
     {
-        $sensors = new Sensor;
-        //$sensors->temperatura = $request->input('temperatura');
-        //$sensors->save();
-        ////return $request->all();
+        /*$sensors = new Sensor;
         $sensors->data = $request->getContent();
-                $sensors->save();
-                return response()->json($sensors);
+        $sensors->save();
+        return response()->json($sensors);*/
+        
+        return $request->all();
     }
 
     /**
